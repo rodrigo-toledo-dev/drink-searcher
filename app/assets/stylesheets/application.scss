@@ -1,0 +1,105 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+  font-family: "Buffalo Regular";
+  src: font-url("Buffalo.otf");
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 360px;
+}
+
+.header__title {
+  font-family: "Buffalo Regular";
+  font-size: 100px;
+  color: #fff;
+}
+
+.gradient {
+  background: #e96443;
+  background: -webkit-linear-gradient(to right, #904e95, #e96443);
+  background: linear-gradient(to right, #904e95, #e96443);
+}
+
+.icon {
+  width: 160px;
+  height: 160px;
+}
+
+.searcher {
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.searcher__radio {
+  display: flex;
+  justify-content: space-between;
+
+  width: 320px;
+}
+
+.simple-form {
+  margin-top: 20px;
+  display: flex;
+}
+
+.simple-form__input {
+  width: 400px;
+}
+
+.simple-form__btn {
+  margin-left: 10px;
+}
+
+.advanced-form {
+  margin-top: 20px;
+}
+
+.drinks-list {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drink-card {
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 820px;
+  display: flex;
+  flex-direction: row;
+}
+
+.drink-card__img {
+  width: 220px;
+  height: 220px;
+
+  border-radius: 0.25em;
+}
+
+.drink-card__body {
+  margin-left: 30px;
+}

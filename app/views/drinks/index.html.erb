@@ -1,0 +1,46 @@
+<div>
+  <div class="header gradient">
+    <%= image_tag 'cocktail-white.svg', class: 'icon' %>
+    <div class="header__title">The drinks searcher</div>
+  </div>
+
+  <div class="searcher">
+    <div class="searcher__radio">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="searchRadio" id="simpleSearch" value="simple" checked>
+        <label class="form-check-label" for="simpleSearch">Easy search</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="searchRadio" id="advancedSearch" value="advanced">
+        <label class="form-check-label" for="advancedSearch">Recommend me ;)</label>
+      </div>
+    </div>
+
+    <%= form_tag do %>
+      <div class="simple-form">
+        <div class="simple-form__input">
+          <input class="form-control form-control-lg" type="text" placeholder="Try a Martini..">
+        </div>
+        <div class="simple-form__btn">
+          <button type="submit" class="btn btn-outline-primary btn-lg">Search</button>
+        </div>
+      </div>
+
+      <div class="advanced-form" style="display:none;">
+        User inputs to search a collection of drinks based on given recommendations.
+      </div>
+    <% end %>
+  </div>
+
+  <div class="drinks-list">
+    <% @drinks.each do |drink| %>
+      <div class="card drink-card">
+        <%= image_tag drink.image_url, class: 'drink-card__img' %>
+        <div class="drink-card__body">
+          <h2><%= drink.name %></h2>
+          <p><%= drink.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
