@@ -68,9 +68,15 @@ https://drink-searcher.herokuapp.com/
 
 * Instalar **NVM** para gerenciar a versão do node que deve ser no máximo 9
 
+`nvm use v8.16.0`
+
 * Alguns comandos de terminal para auxiliar
 
 `rails db:drop db:create db:migrate db:seed`
+
+* Usar o **guard** em união com plugin do mesmo para o navegador **chrome** é uma boa prática
+
+`bundle exec guard`
 
 -- Deploy em staging
 
