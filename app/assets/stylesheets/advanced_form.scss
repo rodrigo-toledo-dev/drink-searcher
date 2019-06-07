@@ -1,0 +1,13 @@
+.advanced-form {
+    .row {
+        margin-bottom: 1em;
+        margin-left: 8em;
+        input[type="checkbox"] {
+            margin-right: 0.1em;
+        }
+        input.form-control {
+            display: inline-block;
+            width: 12em;
+        }
+    }
+}
