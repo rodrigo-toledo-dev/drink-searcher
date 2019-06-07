@@ -76,6 +76,12 @@ https://drink-searcher.herokuapp.com/
 
 * Primeiramente para rodar em staging
 
+`heroku buildpacks:clear`
+
+`heroku buildpacks:set heroku/nodejs`
+
+`heroku buildpacks:add heroku/ruby`
+
 `heroku run rake db:migrate db:seed`
 
 * Para deploys posteriores
