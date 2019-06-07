@@ -60,6 +60,10 @@ vez que o usuário realizar uma busca.
 
 #### Auxílio ao desenvolvimento
 
+* Endereço de staging
+
+https://drink-searcher.herokuapp.com/
+
 * Usar VSCode pode auxiliar
 
 * Instalar **NVM** para gerenciar a versão do node que deve ser no máximo 9
@@ -67,3 +71,13 @@ vez que o usuário realizar uma busca.
 * Alguns comandos de terminal para auxiliar
 
 `rails db:drop db:create db:migrate db:seed`
+
+-- Deploy em staging
+
+* Primeiramente para rodar em staging
+
+`heroku run rake db:migrate db:seed`
+
+* Para deploys posteriores
+
+`git push heroku master`
