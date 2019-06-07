@@ -10,44 +10,13 @@
       .form-check
         %input#advancedSearch.form-check-input{name: "searchRadio", type: "radio", value: "advanced"}/
         %label.form-check-label{for: "advancedSearch"} Recommend me ;)
-    = form_for :simple_form do |f|
+    = form_for :simple_filter, html: {id: :simple_filter} do |f|
       .simple-form
         .simple-form__input
           %input.form-control.form-control-lg{placeholder: "Try a Martini..", type: "text"}/
         .simple-form__btn
           %button.btn.btn-outline-primary.btn-lg{type: "submit"} Search
-    = form_for :advanced_form do |f|
-      .advanced-form
-        %h4.text-center=t(:advanced_form_title)
-        .container
-          .row
-            .col-sm
-              = f.text_field :base_ingredient, class: 'form form-control', placeholder: t(:base_ingredient)
-            .col-sm
-              = f.text_field :drinkware, class: 'form form-control', placeholder:  t(:drinkware)
-            .col-sm
-              = f.check_box :distilled
-              = f.label(:distilled, t(:distilled))
-            .col-sm
-              = f.check_box :origin
-              = f.label(:origin, t(:origin))
-          .row
-            .col-sm
-              = f.number_field :alcohol_level, min: 0, class: 'form form-control', placeholder: t(:alcohol_level), title: t(:alcohol_level)
-            .col-sm
-              = f.number_field :temperature, min: 0, max: 50, class: 'form form-control', placeholder: t(:temperature), title: t(:temperature)
-            .col-sm
-              = f.number_field :ibu, min: 0, class: 'form form-control', placeholder: t(:ibu), title: t(:ibu)
-            .col-sm
-              = f.button t(:filter), class: "btn btn-outline-primary"
-
+    = render partial: 'advanced_form'
 
   .drinks-list
-    - @drinks.each do |drink|
-      .card.drink-card
-        = image_tag drink.image_url, class: 'drink-card__img'
-        .drink-card__body
-          %h2
-            = drink.name
-          %p
-            = drink.description
+    =render partial: "drinks"

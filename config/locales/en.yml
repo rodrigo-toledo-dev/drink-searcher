@@ -32,7 +32,7 @@
 en:
   hello: "Hello world"
   advanced_form_title: It's easy filter what you want
-  alcohol_level: alcohol level(%)
+  alcohol_level: alcohol level (%)
   distilled: Distilled?
   temperature: temperature...
   base_ingredient: base ingredient...

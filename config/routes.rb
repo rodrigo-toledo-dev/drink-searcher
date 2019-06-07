@@ -3,5 +3,11 @@ Rails.application.routes.draw do
 
   root to: 'drinks#index'
 
-  resources :home, only: %i[index]
+  resources :home, only: [:index] do
+    collection do
+
+    end
+  end
+
+  get '/advanced-filter', to: 'home#advanced_filter', as: 'advanced_filter'
 end
