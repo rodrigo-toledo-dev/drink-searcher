@@ -32,8 +32,6 @@ gem 'redis', '~> 3.0'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether'
-  gem 'rails-assets-bootstrap'
-  gem 'rails-assets-jquery'
 end
 
 group :development, :test do
