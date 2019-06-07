@@ -1,0 +1,8 @@
+- @drinks.each do |drink|
+  .card.drink-card
+    = image_tag drink.image_url, class: 'drink-card__img'
+    .drink-card__body
+      %h2
+        = drink.name
+      %p
+        = drink.description

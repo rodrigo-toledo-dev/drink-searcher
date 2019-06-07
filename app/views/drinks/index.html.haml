@@ -1,0 +1,22 @@
+%div
+  .header.gradient
+    = image_tag 'cocktail-white.svg', class: 'icon'
+    .header__title The drinks searcher
+  .searcher
+    .searcher__radio
+      .form-check
+        %input#simpleSearch.form-check-input{checked: "checked", name: "searchRadio", type: "radio", value: "simple"}/
+        %label.form-check-label{for: "simpleSearch"} Easy search
+      .form-check
+        %input#advancedSearch.form-check-input{name: "searchRadio", type: "radio", value: "advanced"}/
+        %label.form-check-label{for: "advancedSearch"} Recommend me ;)
+    = form_for :simple_filter, html: {id: :simple_filter} do |f|
+      .simple-form
+        .simple-form__input
+          %input.form-control.form-control-lg{placeholder: "Try a Martini..", type: "text"}/
+        .simple-form__btn
+          %button.btn.btn-outline-primary.btn-lg{type: "submit"} Search
+    = render partial: 'advanced_form'
+
+  .drinks-list
+    =render partial: "drinks"

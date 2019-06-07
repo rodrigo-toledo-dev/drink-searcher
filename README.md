@@ -68,6 +68,8 @@ https://drink-searcher.herokuapp.com/
 
 * Instalar **NVM** para gerenciar a versão do node que deve ser no máximo 9
 
+* Codificar erb.html usando erb.haml ao máximo que puder, caso precise de ajuda basta converter o código usando o site https://awsm-tools.com/code/html2haml
+
 `nvm use v8.16.0`
 
 * Alguns comandos de terminal para auxiliar
