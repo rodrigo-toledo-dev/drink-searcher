@@ -56,3 +56,14 @@ vez que o usuário realizar uma busca.
 * Estrutura e organização do código de todas as funcionalidades implementadas
 
 * Estrutura e organização dos testes
+
+
+#### Auxílio ao desenvolvimento
+
+* Usar VSCode pode auxiliar
+
+* Instalar **NVM** para gerenciar a versão do node que deve ser no máximo 9
+
+* Alguns comandos de terminal para auxiliar
+
+`rails db:drop db:create db:migrate db:seed`
