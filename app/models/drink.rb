@@ -12,4 +12,33 @@ class Drink < ApplicationRecord
     cold
     extra_cold
   ]
+
+  def self.advanced_filter(filters)
+    drinks = self.unscoped
+    unless filters[:base_ingredient].blank?
+      drinks = drinks.where('(name ILIKE :q OR base_ingredient ILIKE :q OR description ILIKE :q)', q: "%#{filters[:base_ingredient]}%")
+    end
+
+    unless filters[:drinkware].blank?
+      drinks = drinks.where('drinkware ILIKE :q', q: "%#{filters[:drinkware]}%")
+    end
+
+    unless filters[:origin].blank?
+      drinks = drinks.where('origin ILIKE :q', q: "%#{filters[:origin]}%")
+    end
+
+    unless filters[:distilled].blank?
+      drinks = drinks.where(distilled: filters[:distilled])
+    end
+
+    unless filters[:alcohol_level].blank?
+      drinks = drinks.where(alcohol_level: filters[:alcohol_level])
+    end
+
+    unless filters[:temperature].blank?
+      drinks = drinks.where(temperature: filters[:temperature])
+    end
+
+    drinks.order(:created_at)
+  end
 end
