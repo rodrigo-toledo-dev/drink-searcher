@@ -1,0 +1,4 @@
+= form_for :filter, url: simple_filter_path, remote: true, html: {id: :simple_filter, class: 'form-inline'} do |f|
+  .form-group.mx-sm-3
+    = f.text_field :search, class: 'form-control form-control-lg', placeholder: t('try_martini')
+  = f.button t(:search), class: "btn btn-outline-primary btn-lg", id: 'btn_simple_filter'

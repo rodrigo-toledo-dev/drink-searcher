@@ -10,12 +10,8 @@
       .form-check
         %input#advancedSearch.form-check-input{name: "searchRadio", type: "radio", value: "advanced"}/
         %label.form-check-label{for: "advancedSearch"} Recommend me ;)
-    = form_for :simple_filter, html: {id: :simple_filter} do |f|
-      .simple-form
-        .simple-form__input
-          %input.form-control.form-control-lg{placeholder: "Try a Martini..", type: "text"}/
-        .simple-form__btn
-          %button.btn.btn-outline-primary.btn-lg{type: "submit"} Search
+    .simple-form
+      = render partial: 'simple_form'
     .advanced-form
       = render partial: 'advanced_form'
 

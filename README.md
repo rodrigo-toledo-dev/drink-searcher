@@ -60,17 +60,23 @@ vez que o usuário realizar uma busca.
 
 #### Auxílio ao desenvolvimento
 
+* Implementações devem ser separadas em branchs com o prefixo **features**. Ex.: **features/paginate**. No caso ajustes de bugs o prefixo seria **bugs**.
+
+* Após cada implementação e obviamente testada, realizar o push e tratar no projeto dentro do github a movimentação do mesmo para a coluna certa
+
 * Endereço de staging
 
 https://drink-searcher.herokuapp.com/
 
 * Usar VSCode pode auxiliar
 
-* Instalar **NVM** para gerenciar a versão do node que deve ser no máximo 9
+* Instalar **NVM** para gerenciar a versão do node que deve ser no máximo 9. O comando abaixo ajudaria para estabelecer a versão
+
+`nvm use v8.16.0`
 
 * Codificar erb.html usando erb.haml ao máximo que puder, caso precise de ajuda basta converter o código usando o site https://awsm-tools.com/code/html2haml
 
-`nvm use v8.16.0`
+
 
 * Alguns comandos de terminal para auxiliar
 

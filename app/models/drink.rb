@@ -13,6 +13,18 @@ class Drink < ApplicationRecord
     extra_cold
   ]
 
+  def self.simple_filter(filters)
+    drinks = self.unscoped
+    unless filters[:search].blank?
+      drinks = drinks.where('(name ILIKE :q OR
+        base_ingredient ILIKE :q OR
+        description ILIKE :q OR
+        drinkware ILIKE :q OR
+        origin ILIKE :q)', q: "%#{filters[:search]}%")
+    end
+    drinks.order(:name)
+  end
+
   def self.advanced_filter(filters)
     drinks = self.unscoped
     unless filters[:base_ingredient].blank?

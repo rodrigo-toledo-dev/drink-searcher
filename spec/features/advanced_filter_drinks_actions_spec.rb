@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Filter drinks actions" do
+describe "Advabced Filter drinks actions" do
   before do
     visit root_path
   end
