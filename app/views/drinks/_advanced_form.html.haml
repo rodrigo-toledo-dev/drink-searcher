@@ -7,11 +7,9 @@
       .col-sm
         = f.text_field :drinkware, class: 'form form-control', placeholder:  t(:drinkware)
       .col-sm
-        = f.check_box :distilled
-        = f.label(:distilled, t(:distilled))
+        = f.select :distilled, options_for_destilled, {prompt: t(:distilled)}, class: 'form form-control'
       .col-sm
-        = f.check_box :origin
-        = f.label(:origin, t(:origin))
+        = f.select :origin, options_for_origin, {prompt: t(:origin)}, class: 'form form-control'
     .row
       .col-sm
         = f.number_field :alcohol_level, min: 0, max: 100, class: 'form form-control', placeholder: t(:alcohol_level), title: t(:alcohol_level)
@@ -20,4 +18,4 @@
       .col-sm
         = f.number_field :ibu, min: 0, max: 10, class: 'form form-control', placeholder: t(:ibu), title: t(:ibu)
       .col-sm
-        = f.button t(:filter), class: "btn btn-outline-primary"
+        = f.button t(:filter), class: "btn btn-outline-primary", id: 'btn_advanced_filter'

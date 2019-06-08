@@ -35,6 +35,50 @@ describe "Filter drinks actions" do
       scenario 'Visitor filter and find just one result' do
         page.has_selector?('.drinks-list .drink-card', count: 12)
         expect(page).to have_selector('.advanced-form', visible: true)
+        fill_in 'advanced_filter_base_ingredient',	with: 'Caipirinha'
+        click_button 'btn_advanced_filter'
+        expect(page).to have_http_status(:success)
+        page.has_selector?('.drinks-list .drink-card', count: 1)
+      end
+
+      scenario 'Visitor filter and get two results by basic filter' do
+        page.has_selector?('.drinks-list .drink-card', count: 13)
+        expect(page).to have_selector('.advanced-form', visible: true)
+        fill_in 'advanced_filter_base_ingredient',	with: 'Caipirinha'
+        fill_in 'advanced_filter_alcohol_level',	with: 30
+        click_button 'btn_advanced_filter'
+        expect(page).to have_http_status(:success)
+        page.has_selector?('.drinks-list .drink-card', count: 2)
+        page.has_selector?('h3', text: 'Caipirinha', count: 1)
+        page.has_selector?('h3', text: 'Caldo de Cana', count: 1)
+      end
+
+      scenario 'Visitor filter and just one result using filter' do
+        drink_expected = create(:moscow_mule)
+        page.has_selector?('.drinks-list .drink-card', count: 13)
+        fill_in 'advanced_filter_base_ingredient',	with: drink_expected.name
+        fill_in 'advanced_filter_drinkware',	with: drink_expected.drinkware
+        fill_in 'advanced_filter_alcohol_level',	with: drink_expected.alcohol_level
+        fill_in 'advanced_filter_temperature',	with: drink_expected.temperature
+        fill_in 'advanced_filter_ibu',	with: drink_expected.ibu
+        click_button 'btn_advanced_filter'
+        expect(page).to have_http_status(:success)
+        page.has_selector?('.drinks-list .drink-card', count: 1)
+        page.has_selector?('h3', text: drink_expected.name, count: 1)
+      end
+
+      scenario 'Visitor filter and find nothing because one argument' do
+        drink_expected = create(:moscow_mule)
+        page.has_selector?('.drinks-list .drink-card', count: 13)
+        fill_in 'advanced_filter_base_ingredient',	with: '-------------- there is nothing'
+        fill_in 'advanced_filter_drinkware',	with: drink_expected.drinkware
+        fill_in 'advanced_filter_alcohol_level',	with: drink_expected.alcohol_level
+        fill_in 'advanced_filter_temperature',	with: drink_expected.temperature
+        fill_in 'advanced_filter_ibu',	with: drink_expected.ibu
+        click_button 'btn_advanced_filter'
+        expect(page).to have_http_status(:success)
+        page.has_selector?('.drinks-list .drink-card', count: 0)
+        page.has_selector?('h3', text: drink_expected.name, count: 0)
       end
     end
   end
