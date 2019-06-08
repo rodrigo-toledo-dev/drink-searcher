@@ -7,7 +7,6 @@
           = drink.name
         %p
           = drink.description
+  = paginate @drinks, remote: true
 - else
   %h3=t('no_results')
-
-
