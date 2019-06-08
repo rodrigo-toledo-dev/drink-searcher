@@ -1,24 +1,23 @@
 = form_for :advanced_filter, url: advanced_filter_path, remote: true, html: {id: :advanced_filter} do |f|
-  .advanced-form
-    %h4.text-center=t(:advanced_form_title)
-    .container
-      .row
-        .col-sm
-          = f.text_field :base_ingredient, class: 'form form-control', placeholder: t(:base_ingredient)
-        .col-sm
-          = f.text_field :drinkware, class: 'form form-control', placeholder:  t(:drinkware)
-        .col-sm
-          = f.check_box :distilled
-          = f.label(:distilled, t(:distilled))
-        .col-sm
-          = f.check_box :origin
-          = f.label(:origin, t(:origin))
-      .row
-        .col-sm
-          = f.number_field :alcohol_level, min: 0, class: 'form form-control', placeholder: t(:alcohol_level), title: t(:alcohol_level)
-        .col-sm
-          = f.number_field :temperature, min: 0, max: 50, class: 'form form-control', placeholder: t(:temperature), title: t(:temperature)
-        .col-sm
-          = f.number_field :ibu, min: 0, class: 'form form-control', placeholder: t(:ibu), title: t(:ibu)
-        .col-sm
-          = f.button t(:filter), class: "btn btn-outline-primary"
+  %h4.text-center=t(:advanced_form_title)
+  .container
+    .row
+      .col-sm
+        = f.text_field :base_ingredient, class: 'form form-control', placeholder: t(:base_ingredient)
+      .col-sm
+        = f.text_field :drinkware, class: 'form form-control', placeholder:  t(:drinkware)
+      .col-sm
+        = f.check_box :distilled
+        = f.label(:distilled, t(:distilled))
+      .col-sm
+        = f.check_box :origin
+        = f.label(:origin, t(:origin))
+    .row
+      .col-sm
+        = f.number_field :alcohol_level, min: 0, max: 100, class: 'form form-control', placeholder: t(:alcohol_level), title: t(:alcohol_level)
+      .col-sm
+        = f.number_field :temperature, min: 0, max: 50, class: 'form form-control', placeholder: t(:temperature), title: t(:temperature)
+      .col-sm
+        = f.number_field :ibu, min: 0, max: 10, class: 'form form-control', placeholder: t(:ibu), title: t(:ibu)
+      .col-sm
+        = f.button t(:filter), class: "btn btn-outline-primary"

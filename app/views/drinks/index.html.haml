@@ -16,7 +16,8 @@
           %input.form-control.form-control-lg{placeholder: "Try a Martini..", type: "text"}/
         .simple-form__btn
           %button.btn.btn-outline-primary.btn-lg{type: "submit"} Search
-    = render partial: 'advanced_form'
+    .advanced-form
+      = render partial: 'advanced_form'
 
   .drinks-list
     =render partial: "drinks"
