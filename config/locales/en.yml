@@ -40,5 +40,6 @@ en:
   ibu: ibu?
   drinkware: drinkware...
   filter: Filter
+  no_results: "='( No results"
   yes: Yes
   no: No
