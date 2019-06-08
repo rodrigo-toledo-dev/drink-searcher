@@ -1,6 +1,6 @@
 class DrinksController < ApplicationController
   def index
-    @drinks = Drink.order(:created_at).page params[:page]
+    @drinks = Drink.order(:name).page params[:page]
   end
 
   def simple_filter
