@@ -58,7 +58,7 @@ vez que o usuário realizar uma busca.
 * Estrutura e organização dos testes
 
 
-#### Auxílio ao desenvolvimento
+#### Auxílio ao desenvolvimento (by rodrigo@rtoledo.inf.br)
 
 * Implementações devem ser separadas em branchs com o prefixo **features**. Ex.: **features/paginate**. No caso ajustes de bugs o prefixo seria **bugs**.
 
