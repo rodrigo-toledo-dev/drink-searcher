@@ -1,13 +1,17 @@
 class DrinksController < ApplicationController
   def index
     @drinks = Drink.order(:name).page params[:page]
+    respond_to do |format|
+      format.html
+      format.js { render action: "list" }
+    end
   end
 
   def simple_filter
     @drinks = Drink.simple_filter(simple_filter_params).page params[:page]
     respond_to do |format|
       format.html { head :no_content }
-      format.js
+      format.js { render action: "list" }
     end
   end
 
@@ -15,7 +19,7 @@ class DrinksController < ApplicationController
     @drinks = Drink.advanced_filter(advanced_filter_params).page params[:page]
     respond_to do |format|
       format.html { head :no_content }
-      format.js
+      format.js { render action: "list" }
     end
   end
 
